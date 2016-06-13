@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');// used to encrypt the users password 
+var bcrypt = require('bcrypt-nodejs');// used to encrypt the users password
 var Schema = mongoose.Schema;
 
 
@@ -40,7 +40,7 @@ UserSchema.pre('save', function(next) {
 			user.password = hash;
 			next();
 		});
-	
+
 
 	});
 });
@@ -59,6 +59,3 @@ UserSchema.methods.comparePassword = function(password){
 
 //let other js use UserSchema
 module.exports = mongoose.model('User', UserSchema);
-
-
-
