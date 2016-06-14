@@ -28,6 +28,11 @@ router.get('/profile', function(req,res, next){
 
 });
 
+router.get('/logout', function(req, res, next){
+	res.logout();
+	res.redirect('/');
+});
+
 router.get('/signup', function(req,res) {
 	res.render('accounts/signup',{
 		errors: req.flash('errors')
